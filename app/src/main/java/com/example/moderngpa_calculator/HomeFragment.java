@@ -1,7 +1,6 @@
 package com.example.moderngpa_calculator;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.os.Bundle;
@@ -36,10 +35,9 @@ import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 
 public class HomeFragment extends Fragment {
     public static final int ADD_COURSES_REQUEST = 1;
-    public static final int EDIT_NOTE_REQUEST = 2;
     private TextView swipe;
     private SemesterViewModel semesterViewModel;
-    EditText semesterName;
+    private EditText semesterName;
 
 
     @Nullable
@@ -70,12 +68,11 @@ public class HomeFragment extends Fragment {
                 String title = semesterName.getText ().toString ();
                 if (title.trim ().isEmpty ()) {
                     ToastMesage ("please input semester name");
-                }
-                else{
-                    Semester semester=new Semester (title,"","","",""
-                            ,"","","","",0,0,0,0,0,
-                            0,0,0,0,0,0,0,0,0,"","",
-                            "","","","","",0);
+                } else {
+                    Semester semester = new Semester (title, "", "", "", ""
+                            , "", "", "", "", 0, 0, 0, 0, 0,
+                            0, 0, 0, 0, 0, 0, 0, 0, 0, "", "",
+                            "", "", "", "", "", 0);
                     semesterViewModel.insert (semester);
                 }
 
@@ -204,13 +201,13 @@ public class HomeFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         HomeFragment.super.onActivityResult (requestCode, resultCode, data);
 
-         if (requestCode == ADD_COURSES_REQUEST && resultCode == Activity.RESULT_OK) {
-             int id = data.getIntExtra (CreateEditCoursesActivity.EXTRA_ID, -1);
+        if (requestCode == ADD_COURSES_REQUEST && resultCode == Activity.RESULT_OK) {
+            int id = data.getIntExtra (CreateEditCoursesActivity.EXTRA_ID, -1);
 
-             if (id == -1) {
+            if (id == -1) {
                 ToastMesage ("semester can't be created");
-                 return;
-             }
+                return;
+            }
 
             String title = data.getStringExtra (CreateEditCoursesActivity.EXTRA_TITLE);
 
@@ -275,7 +272,7 @@ public class HomeFragment extends Fragment {
                 ToastMesage ("no semester created yet");
 
             } else {
-                AlertDialog.Builder builder=new AlertDialog.Builder (Objects.requireNonNull (getContext ()));
+                AlertDialog.Builder builder = new AlertDialog.Builder (Objects.requireNonNull (getContext ()));
                 builder.setTitle ("Delete all semesters?")
                         .setCancelable (false)
                         .setMessage ("this operation cannot be undone when clicked, do you wish to continue?")
