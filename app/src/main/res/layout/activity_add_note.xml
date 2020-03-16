@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".CreateEditCoursesActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/edit_text_title"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/ic_school"
+                android:drawablePadding="25dp"
+                android:fontFamily="@font/amaranth"
+                android:hint="@string/input_semester"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textColorHint="@color/red"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/yellow" />
+
+            <RelativeLayout
+                android:id="@+id/tv_relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tv_course"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amaranth"
+                    android:text="@string/course"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_courseCredit"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/tv_course"
+                    android:fontFamily="@font/amaranth"
+                    android:text="@string/credit"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_courseScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/tv_courseCredit"
+                    android:fontFamily="@font/amaranth"
+                    android:text="@string/score"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_GP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                   android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/amaranth"
+                    android:text="@string/gp"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/tv_addCourses"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/CourseNamee"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="text"
+                    android:textAlignment="center" />
+
+                <View
+                    android:id="@+id/v_course"
+                    android:layout_width="100dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/yellow" />
+
+
+                <EditText
+                    android:id="@+id/CourseCredit"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@id/CourseNamee"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:id="@+id/v_credit"
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseNamee"
+                    android:background="@color/yellow" />
+
+                <EditText
+                    android:id="@+id/CourseScore"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                   android:layout_marginStart="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@id/CourseCredit"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:id="@+id/v_score"
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseCredit"
+                    android:background="@color/yellow" />
+
+
+                <TextView
+                    android:id="@+id/textview_GP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="35dp"
+                    android:fontFamily="@font/amaranth"
+                    android:text="@string/gp"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+
+                <EditText
+                    android:id="@+id/CourseNamee1"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseNamee"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="text"
+                    android:textAlignment="center" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee1"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/yellow" />
+
+
+                <EditText
+                    android:id="@+id/CourseCredit1"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseCredit"
+                   android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/CourseNamee1"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseCredit1"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseNamee1"
+                    android:background="@color/yellow" />
+
+                <EditText
+                    android:id="@+id/CourseScore1"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseScore"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/CourseCredit"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseScore1"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseCredit"
+                    android:background="@color/yellow" />
+
+
+                <TextView
+                    android:id="@+id/textview_GP1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/textview_GP"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="35dp"
+                    android:fontFamily="@font/amaranth"
+                    android:text="@string/gp"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+
+                <EditText
+                    android:id="@+id/CourseNamee5"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseNamee4"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="text"
+                    android:textAlignment="center" />
+
+                <View
+                    android:id="@+id/v_course4"
+                    android:layout_width="100dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee5"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/yellow" />
+
+
+                <EditText
+                    android:id="@+id/CourseCredit5"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseCredit4"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/CourseNamee5"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:id="@+id/v_credit5"
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee5"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseNamee5"
+                    android:background="@color/yellow" />
+
+                <EditText
+                    android:id="@+id/CourseScore5"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseScore4"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/CourseCredit"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:id="@+id/v_score5"
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee5"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseCredit5"
+                    android:background="@color/yellow" />
+
+
+                <TextView
+                    android:id="@+id/textview_GP5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textview_GP4"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="30dp"
+                  android:layout_marginEnd="35dp"
+                    android:fontFamily="@font/amaranth"
+                    android:text="@string/gp"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+
+                <EditText
+                    android:id="@+id/CourseNamee2"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseNamee1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="text"
+                    android:textAlignment="center" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee2"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/yellow" />
+
+
+                <EditText
+                    android:id="@+id/CourseCredit2"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseCredit1"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/CourseNamee1"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseCredit2"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseNamee2"
+                    android:background="@color/yellow" />
+
+                <EditText
+                    android:id="@+id/CourseScore2"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseScore1"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/CourseCredit"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseScore2"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseCredit"
+                    android:background="@color/yellow" />
+
+
+                <TextView
+                    android:id="@+id/textview_GP2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textview_GP1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="35dp"
+                    android:fontFamily="@font/amaranth"
+                    android:text="@string/gp"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+
+                <EditText
+                    android:id="@+id/CourseNamee3"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseNamee2"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="text"
+                    android:textAlignment="center" />
+
+                <View
+                    android:id="@+id/v_course3"
+                    android:layout_width="100dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee3"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/yellow" />
+
+
+                <EditText
+                    android:id="@+id/CourseCredit3"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseCredit2"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/CourseNamee3"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:id="@+id/v_credit3"
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee3"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseNamee3"
+                    android:background="@color/yellow" />
+
+                <EditText
+                    android:id="@+id/CourseScore3"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseScore2"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/CourseCredit"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:id="@+id/v_score3"
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseScore3"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseCredit3"
+                    android:background="@color/yellow" />
+
+
+                <TextView
+                    android:id="@+id/textview_GP3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textview_GP2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="30dp"
+                   android:layout_marginEnd="35dp"
+                    android:fontFamily="@font/amaranth"
+                    android:text="@string/gp"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+
+                <EditText
+                    android:id="@+id/CourseNamee4"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseNamee3"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="text"
+                    android:textAlignment="center" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee4"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/yellow" />
+
+
+                <EditText
+                    android:id="@+id/CourseCredit4"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseCredit3"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/CourseNamee3"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseCredit4"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseNamee4"
+                    android:background="@color/yellow" />
+
+                <EditText
+                    android:id="@+id/CourseScore4"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseScore3"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/CourseCredit3"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseScore4"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseCredit4"
+                    android:background="@color/yellow" />
+
+
+                <TextView
+                    android:id="@+id/textview_GP4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/textview_GP3"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="35dp"
+                    android:fontFamily="@font/amaranth"
+                    android:text="@string/gp"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+
+                <EditText
+                    android:id="@+id/CourseNamee6"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseNamee5"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="text"
+                    android:textAlignment="center" />
+
+                <View
+                    android:id="@+id/v_course6"
+                    android:layout_width="100dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee6"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/yellow" />
+
+
+                <EditText
+                    android:id="@+id/CourseCredit6"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseCredit5"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/CourseNamee5"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:id="@+id/v_credit6"
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee6"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseNamee6"
+                    android:background="@color/yellow" />
+
+                <EditText
+                    android:id="@+id/CourseScore6"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/CourseScore5"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/CourseCredit6"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/amaranth"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center" />
+
+                <View
+                    android:id="@+id/v_score6"
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/CourseNamee6"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/CourseCredit6"
+                    android:background="@color/yellow" />
+
+
+                <TextView
+                    android:id="@+id/textview_GP6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textview_GP5"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="35dp"
+                    android:fontFamily="@font/amaranth"
+                    android:text="@string/gp"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
