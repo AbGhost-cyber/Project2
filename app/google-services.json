@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "185204558137",
+    "firebase_url": "https://modern-gpa-calculator.firebaseio.com",
+    "project_id": "modern-gpa-calculator",
+    "storage_bucket": "modern-gpa-calculator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185204558137:android:afab11c4ed4c6d6b4a40e8",
+        "android_client_info": {
+          "package_name": "com.example.moderngpa_calculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185204558137-4g8ntsrpsco1gf80kb5tldqqah9ejaal.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.moderngpa_calculator",
+            "certificate_hash": "f4e0d5914e77f18dd5c0a146b9ce8b8550826389"
+          }
+        },
+        {
+          "client_id": "185204558137-t4juaigfpekkvdj4nmr5vundebejp21d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgSalhFviGHD76oKEPAAcNSfIPe1y5reA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185204558137-t4juaigfpekkvdj4nmr5vundebejp21d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
