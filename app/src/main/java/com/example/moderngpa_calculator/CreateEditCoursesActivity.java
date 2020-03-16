@@ -11,6 +11,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.Objects;
 
 public class CreateEditCoursesActivity extends AppCompatActivity {
@@ -62,6 +67,7 @@ public class CreateEditCoursesActivity extends AppCompatActivity {
     private double gradepoint = 0.0;
     private double CreditRate = 0, CreditRate1 = 0, CreditRate2 = 0, CreditRate3 = 0, CreditRate4 = 0, CreditRate5 = 0,
             CreditRate6 = 0;
+    private InterstitialAd mAds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +109,23 @@ public class CreateEditCoursesActivity extends AppCompatActivity {
         Gradepoint5 = findViewById (R.id.textview_GP5);
         Gradepoint6 = findViewById (R.id.textview_GP6);
 
+        //initialize ad variable
+        MobileAds.initialize (this,"ca-app-pub-7292512767354152~3211802065");
+        mAds=new InterstitialAd (this);
+        //set ad id
+        mAds.setAdUnitId ("ca-app-pub-7292512767354152~3211802065");
+        AdRequest request=new AdRequest.Builder ()
+                .build ();
+        //load ad request
+        mAds.loadAd (request);
+
+        //onclick
+        mAds.setAdListener (new AdListener (){
+            @Override
+            public void onAdClosed(){
+                mAds.loadAd (new AdRequest.Builder ().build ());
+            }
+        });
 
         Objects.requireNonNull (getSupportActionBar ()).setHomeAsUpIndicator (R.drawable.ic_close_24dp);
 
@@ -521,6 +544,12 @@ public class CreateEditCoursesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId () == R.id.save_semester_item) {
             saveSemester ();
+
+            //display ad if its loaded
+            if(mAds.isLoaded ()){
+                mAds.show ();
+            }
+
             return true;
         }
         return super.onOptionsItemSelected (item);

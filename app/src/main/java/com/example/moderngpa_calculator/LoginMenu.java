@@ -62,6 +62,7 @@ public class LoginMenu extends AppCompatActivity {
                 if(task.isSuccessful())
                 {
                     Toast.makeText(LoginMenu.this,"Logged in Successfully",Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility (View.GONE);
                     Intent myintent=new Intent(this,MainActivity.class);
                     startActivity(myintent);
                     finish();
@@ -72,6 +73,7 @@ public class LoginMenu extends AppCompatActivity {
                 else
                 {
                     Toast.makeText(LoginMenu.this,"Error! "+ task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility (View.GONE);
                 }
             });
 

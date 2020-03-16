@@ -26,6 +26,9 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -38,6 +41,7 @@ public class HomeFragment extends Fragment {
     private TextView swipe;
     private SemesterViewModel semesterViewModel;
     private EditText semesterName;
+    private InterstitialAd mAds;
 
 
     @Nullable
@@ -193,6 +197,9 @@ public class HomeFragment extends Fragment {
     }
 
 
+
+
+    // display toast message method
     private void ToastMesage(String message) {
         Toast.makeText (HomeFragment.this.getActivity (), message, Toast.LENGTH_SHORT).show ();
     }

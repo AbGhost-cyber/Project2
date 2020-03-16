@@ -40,22 +40,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private DrawerLayout drawer;
     private FirebaseUser currentUser;
     private FirebaseAuth mAuth;
-    private InterstitialAd mAds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PrepareAds ();
 
-        ScheduledExecutorService scheduler= Executors.newSingleThreadScheduledExecutor ();
-       scheduler.scheduleAtFixedRate (() -> runOnUiThread (() -> {
-           if(mAds.isLoaded ()){
-               mAds.show ();
-           }
-           PrepareAds ();
-       }),20,20,TimeUnit.SECONDS);
 
 
 
@@ -155,12 +146,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     }
 
-    //prepare to show ads
-    public void PrepareAds(){
-        mAds=new InterstitialAd (this);
-        mAds.setAdUnitId ("ca-app-pub-7292512767354152~3211802065");
-        mAds.loadAd (new AdRequest.Builder().build());
-    }
+
+
 
     //show feedback dialog
     public void showFeedbackDialog()
