@@ -19,6 +19,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.DialogFragment;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,15 +31,33 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     private FirebaseUser currentUser;
     private FirebaseAuth mAuth;
+    private InterstitialAd mAds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        PrepareAds ();
+
+        ScheduledExecutorService scheduler= Executors.newSingleThreadScheduledExecutor ();
+       scheduler.scheduleAtFixedRate (() -> runOnUiThread (() -> {
+           if(mAds.isLoaded ()){
+               mAds.show ();
+           }
+           PrepareAds ();
+       }),20,20,TimeUnit.SECONDS);
+
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -133,6 +153,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             TextView textViewEmail = headerView.findViewById(R.id.useremail);
             textViewEmail.setText(currentUser.getEmail());
 
+    }
+
+    //prepare to show ads
+    public void PrepareAds(){
+        mAds=new InterstitialAd (this);
+        mAds.setAdUnitId ("ca-app-pub-7292512767354152~3211802065");
+        mAds.loadAd (new AdRequest.Builder().build());
     }
 
     //show feedback dialog
